@@ -59,7 +59,9 @@ __pycache__/
 # Virtual env
 venv/
 .env
-
+#models
+*.pkl
+models/
 # Django migrations (optional to ignore, but usually yes)
 */migrations/*.py
 */migrations/*.pyc
