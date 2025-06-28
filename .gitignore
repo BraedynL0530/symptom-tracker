@@ -61,7 +61,7 @@ venv/
 .env
 #models
 *.pkl
-models/
+DjangoReactApp/Models/
 # Django migrations (optional to ignore, but usually yes)
 */migrations/*.py
 */migrations/*.pyc

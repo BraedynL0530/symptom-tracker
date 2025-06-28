@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import symptomCategories from '../data/symptoms.json';
 
-export default function SymptomChecklist() {
-  const [selectedSymptoms, setSelectedSymptoms] = useState(new Set());
+export default function SymptomChecklist({ selectedSymptoms, setSelectedSymptoms }) {
   const [activeCategory, setActiveCategory] = useState(Object.keys(symptomCategories)[0]);
 
   const toggleSymptom = (symptom) => {

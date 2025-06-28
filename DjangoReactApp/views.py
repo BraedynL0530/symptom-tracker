@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 BASE_DIR = os.path.dirname(__file__)
 MODEL_DIR = os.path.join(BASE_DIR, 'models')
-model = joblib.load(os.path.join(MODEL_DIR, 'xgboost_model.pkl'))
+model = joblib.load(os.path.join(MODEL_DIR, 'xgb_model.pkl'))
 mlb = joblib.load(os.path.join(MODEL_DIR, 'mlb_encoder.pkl'))
 label_encoder = joblib.load(os.path.join(MODEL_DIR, 'label_encoder.pkl'))
 
