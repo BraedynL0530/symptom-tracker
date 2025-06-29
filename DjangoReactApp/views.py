@@ -13,11 +13,9 @@ BASE_DIR = os.path.dirname(__file__)
 MODEL_DIR = os.path.join(BASE_DIR, 'models')
 model = CatBoostClassifier()
 model = joblib.load(os.path.join(MODEL_DIR, 'catboost_model.pkl'))
-mlb = joblib.load(os.path.join(MODEL_DIR, 'mlb_encoder.pkl'))
-label_encoder = joblib.load(os.path.join(MODEL_DIR, 'label_encoder.pkl'))
+mlb = joblib.load(os.path.join(MODEL_DIR, 'mlb.pkl'))
+label_encoder = joblib.load(os.path.join(MODEL_DIR, 'le.pkl'))
 
-print(os.path.join(MODEL_DIR, 'xgb_model.pkl'))
-print(os.path.exists(os.path.join(MODEL_DIR, 'xgb_model.pkl')))
 
 print("Known symptoms in MLB:", mlb.classes_)
 
@@ -28,6 +26,7 @@ def predict(request):
         try:
             data = json.loads(request.body)
             symptoms  = data.get('symptoms')
+            symptoms = [s.strip().lower() for s in symptoms]
 
             if not symptoms:
                 return JsonResponse({'error': 'No symptoms provided'}, status=400)
@@ -48,7 +47,7 @@ def predict(request):
             top_predictions = [{'disease': name, 'confidence': float(f"{conf:.4f}")} for name, conf in top_5]
 
 
-            if top_predictions[0]['confidence'] < 0.5:
+            if top_predictions[0]['confidence'] < 0.2:
                 return JsonResponse({
                     'prediction': 'Model is unsure, try adding more symptoms',
                     'top_predictions': top_predictions

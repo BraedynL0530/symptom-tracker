@@ -30,7 +30,7 @@ function App() {
       />
          <button onClick={exportToModel}>Export to model + PDF</button>
          <p>Hey, model’s kinda sucks it was a first time for me! </p>
-         <p>Be sure to go to a real doctor and take this response with a grain of salt.</p>
+         <p>this isn't substitution for a real doctor. The model also isn't good with mental illnesses</p>
     </div>
 
 

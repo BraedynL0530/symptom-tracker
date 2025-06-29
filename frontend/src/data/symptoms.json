@@ -84,7 +84,7 @@
     "blackheads",
     "blister",
     "bruising",
-    "dischromic _patches",
+    "dichromatic_patches",
     "drying_and_tingling_lips",
     "inflammatory_nails",
     "scurring",
@@ -97,7 +97,7 @@
     "red_spots_over_body",
     "nodal_skin_eruptions",
     "puffy_face_and_eyes",
-    "swelling_extremeties"
+    "swollen_extremeties"
   ],
   "Eyes / Vision": [
     "blurred_and_distorted_vision",
@@ -129,7 +129,7 @@
     "irregular_sugar_level",
     "enlarged_thyroid",
     "obesity",
-    "swelling_blood_vessels",
+    "swollen_blood_vessels",
     "prominent_veins_on_calf"
   ],
   "Immune / Infection-related": [
