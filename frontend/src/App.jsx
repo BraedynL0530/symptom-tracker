@@ -28,7 +28,9 @@ function App() {
           selectedSymptoms={selectedSymptoms}
           setSelectedSymptoms={setSelectedSymptoms}
       />
-         <button onClick={exportToModel}>Export</button>
+         <button onClick={exportToModel}>Export to model + PDF</button>
+         <p>Hey, model’s kinda sucks it was a first time for me! </p>
+         <p>Be sure to go to a real doctor and take this response with a grain of salt.</p>
     </div>
 
 
