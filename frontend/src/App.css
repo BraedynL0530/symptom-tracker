@@ -100,6 +100,25 @@
   text-align: center;
 }
 
+.prediction-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: #222;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.prediction-box ul {
+  list-style: none;
+  padding: 0;
+}
+.prediction-box li {
+  margin: 5px 0;
+}
 
 button.export-btn {
   position: fixed;

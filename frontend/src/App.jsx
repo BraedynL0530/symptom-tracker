@@ -6,6 +6,8 @@ import './App.css'
 function App() {
 
     const [selectedSymptoms, setSelectedSymptoms] = useState(new Set());
+    const [predictionResult, setPredictionResult] = useState(null);
+
     // Generates and downloads a PDF of the selected symptoms
     const exportPDF = async () =>{
                   const symptomArray = Array.from(selectedSymptoms)
@@ -53,6 +55,9 @@ function App() {
                   });
                   const data = await response.json();
                   console.log('Model response:', data);
+
+                  setPredictionResult(data.predictions || data.prediction);
+
                   exportPDF();
           };
 
@@ -66,6 +71,24 @@ function App() {
           selectedSymptoms={selectedSymptoms}
           setSelectedSymptoms={setSelectedSymptoms}
       />
+      {predictionResult && (
+          <div className="prediction-box">
+            <h3>Predictions:</h3>
+            {Array.isArray(predictionResult) ? (
+              <ul>
+                {predictionResult.map((item, idx) => (
+                  <li key={idx}>
+                    {item.disease} - {Math.round(item.confidence * 100)}%
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>{predictionResult}</p>
+            )}
+          </div>
+        )}
+
+
          <button className={'export-btn'} onClick={exportToModel}>Export to model + PDF</button>
          <button className={'export-btn'} onClick={exportPDF}>Export to PDF</button>
          <p><strong>Disclaimer:</strong> This isn’t a substitute for a real doctor. Model isn't good with mental illnesses</p>

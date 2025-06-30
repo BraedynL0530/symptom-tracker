@@ -68,11 +68,7 @@ def predict(request):
             top_predictions = [{'disease': name, 'confidence': float(f"{conf:.4f}")} for name, conf in top_5]
 
 
-            if top_predictions[0]['confidence'] < 0.2:
-                return JsonResponse({
-                    'prediction': 'Model is unsure, try adding more symptoms',
-                    'top_predictions': top_predictions
-                })
+
 
             return JsonResponse({
                 'predictions': top_predictions
