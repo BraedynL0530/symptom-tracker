@@ -1,6 +1,7 @@
 # 🩺 Symptom Tracker (w/ ML Diagnosis)
 
 This web app lets users select symptoms, receive possible disease predictions using a trained machine learning model, and export the results as a downloadable PDF. **not a replacement for real medical advice.**
+Ai assited, Css, and prediction box(html).
 
 ---
 
@@ -33,6 +34,12 @@ This web app lets users select symptoms, receive possible disease predictions us
 | ML Model   | CatBoost, Scikit-learn |
 | PDF Export | `fpdf2`                |
 | Deployment | Heroku (coming soon)   |
+
+---
+
+##Model ipynb:
+
+[symptomModel]([url](https://colab.research.google.com/drive/1GiuKZHifoPUQC5KNYKnRHb9nlPLONFa5?usp=sharing))
 
 ---
 
