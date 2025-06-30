@@ -6,6 +6,7 @@ import './App.css'
 function App() {
 
     const [selectedSymptoms, setSelectedSymptoms] = useState(new Set());
+    // Generates and downloads a PDF of the selected symptoms
     const exportPDF = async () =>{
                   const symptomArray = Array.from(selectedSymptoms)
                     console.log("Selected symptoms:", symptomArray);
@@ -38,7 +39,7 @@ function App() {
       window.URL.revokeObjectURL(url);
     };
 
-
+    //Sends symptoms to backend model and triggers PDF export
     const exportToModel = async () =>{
               const symptomArray = Array.from(selectedSymptoms)
                 console.log("Selected symptoms:", symptomArray);
@@ -65,10 +66,11 @@ function App() {
           selectedSymptoms={selectedSymptoms}
           setSelectedSymptoms={setSelectedSymptoms}
       />
-         <button onClick={exportToModel}>Export to model + PDF</button>
-         <button onClick={exportPDF}>Export to PDF</button>
-         <p>Hey, model’s kinda sucks it was a first time for me! </p>
-         <p>this isn't substitution for a real doctor. The model also isn't good with mental illnesses</p>
+         <button className={'export-btn'} onClick={exportToModel}>Export to model + PDF</button>
+         <button className={'export-btn'} onClick={exportPDF}>Export to PDF</button>
+         <p><strong>Disclaimer:</strong> This isn’t a substitute for a real doctor. Model isn't good with mental illnesses</p>
+
+
     </div>
 
 

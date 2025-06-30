@@ -9,8 +9,8 @@ import numpy as np
 from fpdf import FPDF
 from django.views.decorators.csrf import csrf_exempt
 from catboost import CatBoostClassifier
-# Create your views here.
 
+#Load model and encoders
 BASE_DIR = os.path.dirname(__file__)
 MODEL_DIR = os.path.join(BASE_DIR, 'models')
 model = CatBoostClassifier()
@@ -52,19 +52,19 @@ def predict(request):
             if not symptoms:
                 return JsonResponse({'error': 'No symptoms provided'}, status=400)
 
-            #Uses saved MultiLabelBinarizer to correct input
+            #Uses saved mlb to correct input
             encoded_input = mlb.transform([symptoms]) #must be a list
 
 
             probs = model.predict_proba(encoded_input)[0]
 
-            # Gets top 5 predictions sorted by probability descending
+            #Gets top 5 predictions sorted by probability descending
             top_5 = sorted(
                 zip(label_encoder.inverse_transform(np.arange(len(probs))), probs),
                 key=lambda x: -x[1]
             )[:5]
 
-            # Format top predictions as a list of dicts
+            #Format top predictions as a list of dicts
             top_predictions = [{'disease': name, 'confidence': float(f"{conf:.4f}")} for name, conf in top_5]
 
 
