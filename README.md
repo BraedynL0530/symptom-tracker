@@ -39,7 +39,7 @@ Ai assited, Css, and prediction box(html).
 
 ## Model ipynb:
 
-[symptomModel]([url](https://colab.research.google.com/drive/1GiuKZHifoPUQC5KNYKnRHb9nlPLONFa5?usp=sharing))
+[SymptomModel](https://colab.research.google.com/drive/1GiuKZHifoPUQC5KNYKnRHb9nlPLONFa5?usp=sharing)
 
 ---
 
