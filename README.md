@@ -1,6 +1,7 @@
 # 🩺 Symptom Tracker (w/ ML Diagnosis)
 
 This web app lets users select symptoms, receive possible disease predictions using a trained machine learning model, and export the results as a downloadable PDF. **not a replacement for real medical advice.**
+
 Ai assited, Css, and prediction box(html).
 
 ---
